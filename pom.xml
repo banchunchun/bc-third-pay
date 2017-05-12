@@ -32,6 +32,7 @@
         <alibaba-druid.version>1.0.20</alibaba-druid.version>
         <alibaba-fastjson.version>1.2.23</alibaba-fastjson.version>
         <tk.mybatis.version>3.3.6</tk.mybatis.version>
+        <unionpay.version>1.0.0-20150703140550</unionpay.version>
         <mybatis-spring-boot-starter.version>1.2.0</mybatis-spring-boot-starter.version>
         <bc.release.url>http://101.69.254.214:8081/nexus/content/repositories/releases</bc.release.url>
         <bc.snapshots.url>http://101.69.254.214:8081/nexus/content/repositories/snapshots</bc.snapshots.url>
@@ -52,37 +53,19 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
+
+            <!-- 银联支付jar -->
             <dependency>
-                <groupId>com.mamahao.data.framework</groupId>
-                <artifactId>mamahao-data-framework-dependencies</artifactId>
-                <version>${mamahao-data-framework.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--<dependency>-->
-            <!--<groupId>com.alibaba</groupId>-->
-            <!--<artifactId>druid</artifactId>-->
-            <!--<version>${alibaba-druid.version}</version>-->
-            <!--</dependency>-->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
+                <groupId>fakepath</groupId>
+                <artifactId>upacp_sdk</artifactId>
+                <version>${unionpay.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot-starter.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>${pagehelper.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>tk.mybatis</groupId>
-                <artifactId>mapper</artifactId>
-                <version>${tk.mybatis.version}</version>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk16</artifactId>
+                <version>1.46</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
