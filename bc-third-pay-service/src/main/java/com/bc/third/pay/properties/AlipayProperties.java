@@ -20,6 +20,9 @@ public class AlipayProperties {
     private static String privateKey;
     private static String key;
 
+    private static String appCallBackUrl;
+
+    private static String wapCallBackUrl;
 
     public static String getPartner() {
         return partner;
@@ -51,5 +54,21 @@ public class AlipayProperties {
 
     public static void setKey(String key) {
         AlipayProperties.key = key;
+    }
+
+    public static String getAppCallBackUrl() {
+        return appCallBackUrl;
+    }
+
+    public static void setAppCallBackUrl(String appCallBackUrl) {
+        AlipayProperties.appCallBackUrl = appCallBackUrl;
+    }
+
+    public static String getWapCallBackUrl() {
+        return wapCallBackUrl;
+    }
+
+    public static void setWapCallBackUrl(String wapCallBackUrl) {
+        AlipayProperties.wapCallBackUrl = wapCallBackUrl;
     }
 }

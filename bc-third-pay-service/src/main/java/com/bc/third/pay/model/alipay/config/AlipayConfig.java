@@ -28,7 +28,10 @@ public class AlipayConfig {
     public static String key = AlipayProperties.getKey();
     // 商家支付宝
     public static String sell_account = AlipayProperties.getSeller();
-
+    //APP 支付异步通知
+    public static String app_callback_url = AlipayProperties.getAppCallBackUrl();
+    //wap 支付异步通知
+    public static String wap_callback_url = AlipayProperties.getWapCallBackUrl();
     // 支付宝的公钥，无需修改该值
     public static String ali_public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB";
 

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import static com.bc.third.pay.model.alipay.config.AlipayConfig.app_callback_url;
+
 /**
  * Created with IntelliJ IDEA.
  * User: banchun
@@ -68,7 +70,7 @@ public class PayServiceImpl implements PayService {
         // 商品金额
         orderInfo += "&total_fee=" + "\"" + price + "\"";
         // 服务器异步通知页面路径
-        orderInfo += "&notify_url=" + "\"" + notifyUrl + "\"";
+        orderInfo += "&notify_url=" + "\"" + AlipayConfig.app_callback_url + "\"";
         // 服务接口名称， 固定值
         orderInfo += "&service=\""+ AlipayConfig.mobile_pay_service+"\"";
         // 支付类型， 固定值
