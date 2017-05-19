@@ -1,8 +1,6 @@
 package com.bc.third.pay.properties;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,44 +11,45 @@ import org.springframework.stereotype.Component;
  * Description:
  * To change this template use File | Settings | File Templates.
  */
+@ConfigurationProperties(prefix = "pay.alipay")
 @Component
 public class AlipayProperties {
 
-    @Value("${pay.alipay.partner}")
-    private  String      partner;
-    private  String      seller;
-    private  String      privateKey;
-    private  String      key;
+    private static String partner;
+    private static String seller;
+    private static String privateKey;
+    private static String key;
 
-    public String getPartner() {
+
+    public static String getPartner() {
         return partner;
     }
 
-    public void setPartner(String partner) {
-        this.partner = partner;
+    public static void setPartner(String partner) {
+        AlipayProperties.partner = partner;
     }
 
-    public String getSeller() {
+    public static String getSeller() {
         return seller;
     }
 
-    public void setSeller(String seller) {
-        this.seller = seller;
+    public static void setSeller(String seller) {
+        AlipayProperties.seller = seller;
     }
 
-    public String getPrivateKey() {
+    public static String getPrivateKey() {
         return privateKey;
     }
 
-    public void setPrivateKey(String privateKey) {
-        this.privateKey = privateKey;
+    public static void setPrivateKey(String privateKey) {
+        AlipayProperties.privateKey = privateKey;
     }
 
-    public String getKey() {
+    public static String getKey() {
         return key;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public static void setKey(String key) {
+        AlipayProperties.key = key;
     }
 }

@@ -1,7 +1,7 @@
 package com.bc.third.pay.web.controller;
 
 
-import com.bc.third.pay.web.properties.AlipayProperties;
+import com.bc.third.pay.properties.AlipayProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +30,7 @@ public class UserController {
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
 //
         System.out.println(alipayProperties.getPartner());
+        System.out.println(alipayProperties.getKey());
 
         return null;
     }

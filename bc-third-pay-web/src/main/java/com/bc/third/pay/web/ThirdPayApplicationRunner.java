@@ -36,7 +36,7 @@ import java.util.logging.Logger;
 //@EnableTransactionManagement
 //@EnableSpringDataWebSupport
 @SpringBootApplication
-//@ComponentScan(value = {"com.bc.ebiz.user"})
+@ComponentScan(value = {"com.bc.third.pay"})
 //@EnableMongoRepositories(basePackages = "com.mamahao.ebiz.user.persist.repository.mongo",repositoryFactoryBeanClass = BaseMongoRepositoryFactoryBean.class)
 @EnableHystrix
 @EnableHystrixDashboard

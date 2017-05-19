@@ -1,6 +1,8 @@
 package com.bc.third.pay.model.alipay.config;
 
 import com.bc.third.pay.properties.AlipayProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 支付宝配置中心
@@ -11,17 +13,21 @@ import com.bc.third.pay.properties.AlipayProperties;
  * Description:
  * To change this template use File | Settings | File Templates.
  */
+@Component
 public class AlipayConfig {
+
+    @Autowired
+    AlipayProperties alipayProperties;
     // 合作身份者ID，以2088开头由16位纯数字组成的字符串
-//    public static String partner = AlipayProperties.getPartner();
-//    //商户身份id
-//    public static String seller_id = partner;
-//    // 商户的私钥
-//    public static String private_key = AlipayProperties.getPrivateKey();
-//    //商户设置的pid key
-//    public static String key = AlipayProperties.getKey();
-//    // 商家支付宝
-//    public static String sell_account = AlipayProperties.getSeller();
+    public static String partner = AlipayProperties.getPartner();
+    //商户身份id
+    public static String seller_id = partner;
+    // 商户的私钥
+    public static String private_key = AlipayProperties.getPrivateKey();
+    //商户设置的pid key
+    public static String key = AlipayProperties.getKey();
+    // 商家支付宝
+    public static String sell_account = AlipayProperties.getSeller();
 
     // 支付宝的公钥，无需修改该值
     public static String ali_public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB";

@@ -11,18 +11,7 @@ server:
   context-path: /pay
   tomcat:
     uri-encoding: utf-8
-#mamahao:
-#  data:
-#    mybatis:
-#      base-package: com.bc.ebiz.user.persist
-#      type-aliases-package: com.bc.ebiz.user.persist.entity
-#      identity: MYSQL
-#      mapper-locations: classpath*:/mapper/**/*.xml
-#      check-config-location: false
-#      not-empty: false
-#
-#      mappers: com.mamahao.data.framework.mybatis.bean.IMapper
-#      config: mybatis-config.xml
+
 eureka:
   instance:
     metadata-map:
