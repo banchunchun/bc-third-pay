@@ -1,0 +1,24 @@
+pay:
+  alipay:
+    partner: mmhtest@mamahao.com  #你的支付宝帐号
+    seller: mmhtest@mamahao.com  #你的支付宝帐号
+    privateKey: MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAMIFv3Wciin1r00rlk+esxnJfhq051P9bfChgFbre+DpgQdU/zXpr8bH3/4F1auLFuPeAH98CTholXUu0G+NMXA/+N/XlHLGB5Tdl7Sil9eWPrs9xpnnQcVMsRc3a8XHmngZJHXABvxdMH2WQcXK3RFc7/rtaL6Hq23ziMlNFdCJAgMBAAECgYEAoiEDeFgy7BUtQ6Mkm6vVpbrF8bMxivG/KNEL2ZY1kiANff78tCRuigEDn9VoU0yK+CbO67jOS6C5I47XBiBKKjiucwkScqwd9IJfavZJ3hokd3RE+BQ4TjM+yeYyHLiprISHvQW/r+NjJ4dNlh7vB+kPDWOsl6AuaMwsu0b7ZsECQQDy+lBVrF/FMtXlJ5XiPl0kgTQJ6+fC1DVwIC3xlUDvv78Kw8Zh960SR+H2XVAEJ6YNbq/t3CXqQ9idg1D1ucG9AkEAzGvCuYI5pBC1eFqqs3ZiXFZcjEu55YZTd8IevuQ2Eo5j8woV3Xx2o25wAiW6xVtkR5AlkelABKXTZxX7vIFovQJAfFtMnmyYn48DFkOKXL7aYQKXpbRNa9O8feSaXxiqoYobtuC4Og/PTpnntnXPrDC2tg0+kZio9xs+VG+PEhS+aQJBAMQjuWkJnIjhR129kQA03NfAPXiXyDyEkF3eMmXyzjcrzJcL3ELyA1t4wZwt23E16ZgIpSPFbBmJirfkjfAnMvkCQQCSkhpzyGUhety0S+ndP5FmbgsXMFNq7f6gEKY+dTyAmJrMqR2+2SNeqD01p7HGxs9pvwTktTwwrZ1kV+zZVLNZ #你的私钥
+    key: 8qpsxwoutk5ngjjecpqh2j0tcauuq3iw #你的支付宝key
+    appCallBackUrl: http://  #app 支付 异步通知
+    wapCallBackUrl: http://www  #wap 支付异步通知
+
+  weixin:
+    app:
+      appid: wx26718b3e58d39d22 #微信开放平台appid
+      appsecret: be48450a017caa8227e3a0a4e77c497d #微信开放平台密钥
+      partner: 1348412601 #商户号
+      key: LACDDAXXSAZ33111309JDMDKKKKKDGHT #密钥
+      cert: F:\\weixin\\test-cert\\apiclient_cert.p12 #证书路径 用于退款，查询订单，支付时用不到
+    mp:
+      appid: wx230909e739bb72fd #微信公众号的appid
+      appsecret: a5e7bc796aba986ff12bfaaba8aa8989 #微信公众号的secret
+      partner: 1321564401 #商户号
+      host: http://api.mamhao.com  #支付绑定的域名
+      token: weixinmmh # 微信token的可用于和微信公众号进行交互
+      key: Mahsuhendgy547jeuxchdkjanhudnaod #支付私钥
+      cert: F://mmh-test//apiclient_cert.p12 #证书路径
