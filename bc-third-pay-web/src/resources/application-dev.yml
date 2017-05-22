@@ -24,3 +24,19 @@ pay:
       key: Mahsuhendgy547jeuxchdkjanhudnaod #支付私钥
       cert: F://mmh-test//apiclient_cert.p12 #证书路径
       callBackUrl: http://www   #异步通知url
+  unionpay:
+    merId:  //商户号
+    version: 5.0.0
+    encoding: UTF-8
+    signMethod: 01
+    txnType: 01
+    txnTypeRefund: 04
+    txnSubType: 01
+    txnSubTypRefund: 00
+    bizType: 000201
+    APPChannelType: 08
+    pcChannelType: 07
+    accessType: 0
+    currencyCode: 156
+    frontUrl:
+    backUrl:
