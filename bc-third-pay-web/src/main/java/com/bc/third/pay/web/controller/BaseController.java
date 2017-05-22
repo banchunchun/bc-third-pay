@@ -20,6 +20,8 @@ import java.util.Map;
 @Controller
 public abstract class BaseController extends ResponseProcessor{
 
+    protected final String DEFAULT_CHARSET = "UTF-8";
+
     protected final String response_success = "success";
 
     protected final String response_fail = "fail";
