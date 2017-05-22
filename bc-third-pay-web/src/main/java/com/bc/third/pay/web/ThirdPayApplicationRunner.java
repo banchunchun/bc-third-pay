@@ -45,6 +45,7 @@ public class ThirdPayApplicationRunner implements CommandLineRunner {
     private static Logger logger = Logger.getLogger(ThirdPayApplicationRunner.class.getName());
 
     public static void main(String[] args) {
+        System.setProperty("org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH","true");
         StopWatch watch = new StopWatch("UserServiceApp");
 
         watch.start("SpringApplication");

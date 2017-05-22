@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -39,6 +40,12 @@ public class PayServiceImpl implements PayService {
     private final Logger logger = LoggerFactory.getLogger(PayService.class);
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+
+    @PostConstruct
+    public void initUnionPayConf(){
+        SDKConfig.getConfig().loadPropertiesFromSrc();// 从classpath加载acp_sdk.properties文件
+        logger.debug("unionpay参数初始化:从classpath加载acp_sdk.properties文件");
+    }
 
     /**
      * 提交支付宝APP支付信息
