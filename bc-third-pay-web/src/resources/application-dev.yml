@@ -9,16 +9,18 @@ pay:
 
   weixin:
     app:
-      appid: wx26718b3e58d39d22 #微信开放平台appid
-      appsecret: be48450a017caa8227e3a0a4e77c497d #微信开放平台密钥
+      appId: wx26718b3e58d39d22 #微信开放平台appid
+      appSecret: be48450a017caa8227e3a0a4e77c497d #微信开放平台密钥
       partner: 1348412601 #商户号
       key: LACDDAXXSAZ33111309JDMDKKKKKDGHT #密钥
       cert: F:\\weixin\\test-cert\\apiclient_cert.p12 #证书路径 用于退款，查询订单，支付时用不到
+      callBackUrl: http://www   #异步通知url
     mp:
-      appid: wx230909e739bb72fd #微信公众号的appid
-      appsecret: a5e7bc796aba986ff12bfaaba8aa8989 #微信公众号的secret
+      appId: wx230909e739bb72fd #微信公众号的appid
+      appSecret: a5e7bc796aba986ff12bfaaba8aa8989 #微信公众号的secret
       partner: 1321564401 #商户号
       host: http://api.mamhao.com  #支付绑定的域名
       token: weixinmmh # 微信token的可用于和微信公众号进行交互
       key: Mahsuhendgy547jeuxchdkjanhudnaod #支付私钥
       cert: F://mmh-test//apiclient_cert.p12 #证书路径
+      callBackUrl: http://www   #异步通知url

@@ -2,6 +2,7 @@ package com.bc.third.pay.web.controller;
 
 
 import com.bc.third.pay.properties.AlipayProperties;
+import com.bc.third.pay.properties.WeixinAppPayProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,8 @@ public class UserController {
 
     @Autowired
     private AlipayProperties alipayProperties;
+    @Autowired
+    private WeixinAppPayProperties weixinAppPayProperties;
 
     @RequestMapping(value = "/index.htm")
     public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -32,6 +35,8 @@ public class UserController {
         System.out.println(alipayProperties.getPartner());
         System.out.println(alipayProperties.getKey());
 
+
+        System.out.println(weixinAppPayProperties.getKey());
         return null;
     }
 }
