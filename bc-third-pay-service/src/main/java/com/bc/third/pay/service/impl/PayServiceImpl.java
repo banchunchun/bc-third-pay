@@ -2,10 +2,14 @@ package com.bc.third.pay.service.impl;
 
 import com.bc.third.pay.model.alipay.config.AlipayConfig;
 import com.bc.third.pay.model.alipay.sign.RSA;
+import com.bc.third.pay.model.alipay.util.AlipaySubmit;
 import com.bc.third.pay.model.union.UnionPayUtil;
+import com.bc.third.pay.properties.AlipayProperties;
 import com.bc.third.pay.properties.UnionPayProperties;
 import com.bc.third.pay.service.PayService;
 import com.bc.third.pay.utils.DateUtils;
+import com.bc.third.pay.utils.PriceUtil;
+import com.google.common.collect.Maps;
 import com.unionpay.acp.sdk.SDKConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,6 +75,49 @@ public class PayServiceImpl implements PayService {
         orderInfo += "&sign=\"" + rsa_sign + "\"&" + "sign_type=\""+ AlipayConfig.rsa_sign_type+"\"";
 
         return orderInfo;
+    }
+
+    /**
+     * 提交支付宝H5交易信息
+     *
+     * @param batchNo
+     * @return
+     */
+    @Override
+    public String submitAlpayWapInfo(String batchNo) {
+
+        Map<String,String> params = this.packageParams(Maps.newHashMap(),batchNo,100);
+
+        // 建立请求正常支付请求
+        String form = AlipaySubmit.buildRequest(params, "get");
+        logger.info("[topay submit]WAP支付宝    提交网页版支付宝请求:{}",form);
+        return form;
+    }
+
+    /**
+     * 组装支付宝请求参数
+     * @param sParaTemp
+     * @param batchNo
+     * @return
+     */
+    private Map<String, String> packageParams(Map<String,String> sParaTemp,String batchNo,Integer payPrice){
+        sParaTemp.put("service", AlipayConfig.submit_alipay_interface);
+        sParaTemp.put("partner", AlipayConfig.partner);
+        sParaTemp.put("seller_id", AlipayConfig.seller_id);
+        sParaTemp.put("_input_charset", AlipayConfig.input_charset);
+        sParaTemp.put("payment_type", AlipayConfig.alipay_param_type);
+
+
+        sParaTemp.put("notify_url", AlipayProperties.getAppCallBackUrl());
+        sParaTemp.put("return_url", AlipayProperties.getAppCallBackUrl());
+
+        sParaTemp.put("out_trade_no", batchNo);
+        sParaTemp.put("subject", "测试商品");
+        sParaTemp.put("total_fee", String.valueOf(payPrice)); //分
+        sParaTemp.put("show_url", "");
+        sParaTemp.put("body", "测试商品");
+        sParaTemp.put("it_b_pay", AlipayConfig.it_b_pay);
+        return sParaTemp;
     }
 
     /**
@@ -177,7 +224,7 @@ public class PayServiceImpl implements PayService {
 
         String tn = resmap.get("tn");
 
-        logger.debug("tn={}",tn);
+        logger.info("tn={}",tn);
         // 获取预订单tn
         return tn;
     }

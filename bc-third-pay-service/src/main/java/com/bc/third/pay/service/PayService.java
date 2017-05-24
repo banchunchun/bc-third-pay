@@ -28,6 +28,14 @@ public interface PayService {
      */
     String submitAlipayAppInfo(String batchNo, int payPrice) throws UnsupportedEncodingException;
 
+    /**
+     * 提交支付宝H5交易信息
+     * @param batchNo
+     * @return
+     */
+    String submitAlpayWapInfo(String batchNo);
+
+
 
     /**
      * 获取银联支付tn号
